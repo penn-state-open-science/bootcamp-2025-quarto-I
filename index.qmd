@@ -1,0 +1,11 @@
+---
+title: "Quarto: A tool for open scholarship"
+subtitle: "Part I"
+author: "Rick Gilmore"
+---
+
+# Prelude
+
+# Agenda
+
+# Resources

@@ -1,0 +1,15 @@
+format: 
+  revealjs:
+    footer: "[Open Scholarship Bootcamp 2025 • Day 1](https://penn-state-open-science.github.io/bootcamp-2025/day-1.html#day_1_pm_session_2)"
+    slide-number: true
+    fig-align: center
+    logo: https://brand.psu.edu/images/backgrounds/penn-state-shield.jpg
+    bibliography: [include/bib/packages.bib, include/bib/data-viz.bib]
+    csl: include/bib/apa.csl
+    css: include/css/gilmore-revealjs.css
+    code-fold: true
+    code-tools: true
+    chalkboard: true
+knitr:
+  opts_chunk:
+    fig.path: include/fig/ 

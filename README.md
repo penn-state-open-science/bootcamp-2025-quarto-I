@@ -1,6 +1,6 @@
 # bootcamp-2025-quarto-I
 
-RevealJS Presentation given by Rick Gilmore on Quarto at the [2025 Bootcamp](https://penn-state-open-science.github.io/bootcamp-2025/).
+[RevealJS](https://revealjs.com) Presentation given by Rick Gilmore on [Quarto](https://quarto.org) at the [2025 Bootcamp](https://penn-state-open-science.github.io/bootcamp-2025/).
 
 The rendered HTML slides can be viewed here:
 
