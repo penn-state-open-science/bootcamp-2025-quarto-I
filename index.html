@@ -28,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
   <link rel="stylesheet" href="include/css/gilmore-revealjs.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -124,6 +144,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -142,25 +165,238 @@ Rick Gilmore
 </div>
 
 </section>
-<section id="prelude" class="title-slide slide level1 center">
-<h1>Prelude</h1>
+<section>
+<section id="preliminaries" class="title-slide slide level1 center">
+<h1>Preliminaries</h1>
 
 </section>
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ul>
+<li>Motivation</li>
+<li>Installing the tools</li>
+<li>Case study: RevealJS slides</li>
+<li>Under the hood</li>
+</ul>
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-scholarly-workflow" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-scholarly-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-scholarly-workflow">flowchart LR
+  A(["Idea"]) --&gt; B["Proposal"]
+  B --&gt; C("Project_1")
+  B --&gt; D("Project_2")
+  C --&gt; E["IRB_protocol"]
+  D --&gt; E
+  C --&gt; F["Lab_protocol"]
+  D --&gt; F
+  C --&gt; G["Data_pipeline_1"]
+  D --&gt; H["Data_pipeline_2"]
+  B --&gt; I["Conference_presentation"]
+  F --&gt; I
+  G --&gt; I
+  C --&gt; I
+  I --&gt; J["Journal_manuscript"]
+  H --&gt; K["Lab_mtg_report"]
+  K --&gt; J
+  F --&gt; J
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scholarly-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A sample scholarly workflow
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="documents-have-many-parts" class="slide level2">
+<h2>Documents have many parts…</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-document-parts" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-document-parts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-document-parts">flowchart LR
+  A("Data") --&gt; B["Data_pipeline"]
+  B --&gt; C("Figure_1")
+  B --&gt; D("Figure_2")
+  B --&gt; E("Table_1")
+  F("Text") --&gt; G["Document"]
+  H("References") --&gt; G
+  C --&gt; G
+  D --&gt; G
+  E --&gt; G
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-document-parts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Components of a scholarly document
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="challenges" class="slide level2">
+<h2>Challenges</h2>
+<blockquote>
+<p>“I just found a typo in our data file. We need to re-run all of the analyses and regenerate all of the stats, figures, and tables ASAP. The submission deadline is tomorrow!”</p>
+</blockquote>
+<blockquote>
+<p>“Can we make the typefaces and axes the same in Figures 1 and 2? The submission deadline is tomorrow!”</p>
+</blockquote>
+<blockquote>
+<p>“We need to submit our grant progress report by tomorrow!”</p>
+</blockquote>
+</section>
+<section id="more-challenges" class="slide level2">
+<h2>More challenges</h2>
+<ul>
+<li>Reducing duplication of effort</li>
+<li>Re-using our own hard work</li>
+<li>Making our own work reproducible<sup>1</sup> &amp; transparent<sup>2</sup></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>“Same result today as we got yesterday.”</p></li><li id="fn2"><p>“Clear what was done to get from A to B”</p></li></ol></aside></section>
+<section id="solutions" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li>DRY WIT</li>
+</ul>
+</section>
+<section class="slide level2">
 
-<section id="agenda" class="title-slide slide level1 center">
-<h1>Agenda</h1>
+
+<img data-src="https://quotefancy.com/media/wallpaper/3840x2160/4223300-Daniel-Handler-Quote-Don-t-repeat-yourself-It-s-not-only.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="https://quotefancy.com/media/wallpaper/3840x2160/8572780-Ernest-Hemingway-Quote-Live-it-up-so-you-can-write-it-down.jpg" class="r-stretch"></section>
+<section id="computational-notebooks" class="slide level2">
+<h2>Computational notebooks</h2>
+<ul>
+<li>Automate as much as possible</li>
+<li>Re-use text, code, figures (DRY WIT)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="include/img/quarto-logo.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org" class="uri">https://quarto.org</a></p></section>
+<section class="slide level2">
+
+
+<img data-src="include/img/jupyter-logo.png" class="r-stretch"></section>
+<section id="great-resource" class="slide level2">
+<h2>Great resource</h2>
+
+<img data-src="include/img/wilson-etal-plos.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p></section></section>
+<section>
+<section id="installing-the-tools" class="title-slide slide level1 center">
+<h1>Installing the tools</h1>
 
 </section>
+<section id="install-r" class="slide level2">
+<h2>Install R</h2>
 
+<img data-src="include/img/cran-r.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://cran.rstudio.com" class="uri">https://cran.rstudio.com</a></p></section>
+<section id="install-rstudio" class="slide level2">
+<h2>Install RStudio</h2>
+
+<img data-src="include/img/install-rstudio.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p></section>
+<section id="install-quarto" class="slide level2">
+<h2>Install Quarto</h2>
+
+<img data-src="include/img/install-quarto.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></p></section>
+<section id="launch-rstudio" class="slide level2">
+<h2>Launch RStudio</h2>
+
+<img data-src="include/img/rstudio-open.png" class="r-stretch"></section></section>
+<section>
+<section id="case-studies" class="title-slide slide level1 center">
+<h1>Case studies</h1>
+
+</section>
+<section id="template-repository" class="slide level2">
+<h2>Template repository</h2>
+<ul>
+<li>Hosted on <a href="https://github.com">GitHub</a></li>
+<li>Sample files for you to explore</li>
+<li>Slides</li>
+<li>Report</li>
+</ul>
+</section>
+<section id="revealjs-slides" class="slide level2">
+<h2>RevealJS Slides</h2>
+
+<img data-src="include/img/github-template.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://github.com/penn-state-open-science/bootcamp-2025-quarto-I-template" class="uri">https://github.com/penn-state-open-science/bootcamp-2025-quarto-I-template</a></p></section>
+<section class="slide level2">
+
+
+<img data-src="include/img/code-button.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="include/img/copy-url-to-clipboard.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="in-rstudio" class="slide level2">
+<h2>In RStudio</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="include/img/file-menu.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="include/img/new-project.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="include/img/new-project-wizard.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="include/img/create-project-from-version-control.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="include/img/paste-github-url.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="research-report" class="slide level2">
+<h2>Research report</h2>
+</section></section>
+<section>
 <section id="resources" class="title-slide slide level1 center">
 <h1>Resources</h1>
 
 </section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Wilson2014-oa" class="csl-entry" role="listitem">
+Wilson, G., Aruliah, D. A., Brown, C. T., Chue Hong, N. P., Davis, M., Guy, R. T., … Wilson, P. (2014). Best practices for scientific computing. <em>PLoS Biology</em>, <em>12</em>, e1001745. <a href="https://doi.org/10.1371/journal.pbio.1001745">https://doi.org/10.1371/journal.pbio.1001745</a>
+</div>
+</div>
+</section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="https://brand.psu.edu/images/backgrounds/penn-state-shield.jpg" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://penn-state-open-science.github.io/bootcamp-2025/day-1.html#day_1_pm_session_2">Open Scholarship Bootcamp 2025 • Day 1</a></p>
+<p><a href="https://penn-state-open-science.github.io/bootcamp-2025/day-1.html#day_1_pm_session_2">Open Scholarship Bootcamp 2025 • Day 1</a> | © 2025 by Rick Gilmore under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 </div>
 </div></div>
 
