@@ -49,8 +49,8 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
-  <link rel="stylesheet" href="include/css/gilmore-revealjs.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-7446d191c17a986339fc8518a32f4fb9.css">
+  <link rel="stylesheet" href="include/css/psu.sass">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -250,9 +250,15 @@ Figure&nbsp;2: Components of a scholarly document
 <blockquote>
 <p>“I just found a typo in our data file. We need to re-run all of the analyses and regenerate all of the stats, figures, and tables ASAP. The submission deadline is tomorrow!”</p>
 </blockquote>
+</section>
+<section class="slide level2">
+
 <blockquote>
 <p>“Can we make the typefaces and axes the same in Figures 1 and 2? The submission deadline is tomorrow!”</p>
 </blockquote>
+</section>
+<section class="slide level2">
+
 <blockquote>
 <p>“We need to submit our grant progress report by tomorrow!”</p>
 </blockquote>
@@ -268,7 +274,11 @@ Figure&nbsp;2: Components of a scholarly document
 <section id="solutions" class="slide level2">
 <h2>Solutions</h2>
 <ul>
-<li>DRY WIT</li>
+<li>DRY WIT
+<ul>
+<li>Don’t Repeat Yourself</li>
+<li>Write It Down</li>
+</ul></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -283,7 +293,7 @@ Figure&nbsp;2: Components of a scholarly document
 <h2>Computational notebooks</h2>
 <ul>
 <li>Automate as much as possible</li>
-<li>Re-use text, code, figures (DRY WIT)</li>
+<li>Re-use text, code, figures</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -294,10 +304,38 @@ Figure&nbsp;2: Components of a scholarly document
 
 
 <img data-src="include/img/jupyter-logo.png" class="r-stretch"></section>
-<section id="great-resource" class="slide level2">
-<h2>Great resource</h2>
+<section class="slide level2">
 
-<img data-src="include/img/wilson-etal-plos.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p></section></section>
+
+<img data-src="include/img/wilson-etal-plos.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p></section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="include/img/wilson-plos-2024-best-2-annotate-dry.png"></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="include/img/wilson-plos-2014-best-1.png"></p>
+<figcaption><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="include/img/wilson-plos-2024-best-2.png"></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="include/img/wilson-plos-2014-best-1.png"></p>
+<figcaption><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></figcaption>
+</figure>
+</div>
+</div></div>
+</section></section>
 <section>
 <section id="installing-the-tools" class="title-slide slide level1 center">
 <h1>Installing the tools</h1>
@@ -329,12 +367,12 @@ Figure&nbsp;2: Components of a scholarly document
 <ul>
 <li>Hosted on <a href="https://github.com">GitHub</a></li>
 <li>Sample files for you to explore</li>
+<li>Hello World</li>
 <li>Slides</li>
-<li>Report</li>
 </ul>
 </section>
-<section id="revealjs-slides" class="slide level2">
-<h2>RevealJS Slides</h2>
+<section class="slide level2">
+
 
 <img data-src="include/img/github-template.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://github.com/penn-state-open-science/bootcamp-2025-quarto-I-template" class="uri">https://github.com/penn-state-open-science/bootcamp-2025-quarto-I-template</a></p></section>
 <section class="slide level2">
@@ -374,8 +412,69 @@ Figure&nbsp;2: Components of a scholarly document
 
 
 <img data-src="include/img/paste-github-url.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="research-report" class="slide level2">
-<h2>Research report</h2>
+<section class="slide level2">
+
+
+<img data-src="include/img/quarto-I-template-files.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<p>Load the R packages used in the template:</p>
+
+<img data-src="include/img/renv-restore.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<p>Open <code>hello-world.qmd</code></p>
+
+<img data-src="include/img/open-hello-world.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your turn</h2>
+<p>Render the document</p>
+
+<img data-src="include/img/open-hello-world-render.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="include/img/render-html-docx-pdf.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="your-turn-3" class="slide level2">
+<h2>Your turn</h2>
+<p>Inspect the HTML output</p>
+
+<img data-src="include/img/rendered-hello-world-html.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXo1ZXU3a2I2NXByaGd3NGp1bTgzMHBuZDVqcHFyNXN3ZTY2M3BtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/64zCCtka5rWL1gE5JH/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="include/img/open-hello-world.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li>Edit, save, render, inspect</li>
+</ul>
+</section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center">
+<h1>Wrap-up</h1>
+
+</section>
+<section class="slide level2">
+
+
+<img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXU2cHB2cjk2bHN3ejJkdnNjNno0bzlka3d2Y3duOHR1aHM0enNhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BtEw37CXZti8yfq3Ke/giphy.gif" class="r-stretch quarto-figure-center"><p class="caption"><em>You</em> have the power.</p></section>
+<section id="faqs" class="slide level2">
+<h2>FAQs</h2>
+<ul>
+<li>Do I have to learn R?</li>
+<li>What’s wrong with X (alternative tools)?</li>
+<li>My adviser prefers X, what should I do?</li>
+</ul>
+</section>
+<section id="take-homes" class="slide level2">
+<h2>Take homes</h2>
+<ul>
+<li>Quarto <span class="math inline">\(\rightarrow\)</span> DRY WIT</li>
+<li>Reproducible to you <span class="math inline">\(\rightarrow\)</span> reproducible to others</li>
+<li>Save time</li>
+</ul>
 </section></section>
 <section>
 <section id="resources" class="title-slide slide level1 center">

@@ -6,10 +6,12 @@ format:
     logo: https://brand.psu.edu/images/backgrounds/penn-state-shield.jpg
     bibliography: [include/bib/packages.bib, include/bib/data-viz.bib, include/bib/quarto-I.bib]
     csl: include/bib/apa.csl
-    css: include/css/gilmore-revealjs.css
+    css: include/css/psu.sass
     code-fold: true
     code-tools: true
     chalkboard: true
+    mainfont: roboto
+    theme: [default, include/css/psu.sass]
   pptx: default
 knitr:
   opts_chunk:

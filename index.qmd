@@ -59,7 +59,11 @@ flowchart LR
 
 >"I just found a typo in our data file. We need to re-run all of the analyses and regenerate all of the stats, figures, and tables ASAP. The submission deadline is tomorrow!"
 
+---
+
 >"Can we make the typefaces and axes the same in Figures 1 and 2? The submission deadline is tomorrow!"
+
+---
 
 >"We need to submit our grant progress report by tomorrow!"
 
@@ -72,6 +76,8 @@ flowchart LR
 ## Solutions
 
 - DRY WIT
+  - Don't Repeat Yourself
+  - Write It Down
 
 ---
 
@@ -84,7 +90,7 @@ flowchart LR
 ## Computational notebooks
 
 - Automate as much as possible
-- Re-use text, code, figures (DRY WIT)
+- Re-use text, code, figures
 
 ---
 
@@ -94,9 +100,31 @@ flowchart LR
 
 ![](include/img/jupyter-logo.png)
 
-## Great resource
+---
 
 ![@Wilson2014-oa](include/img/wilson-etal-plos.png)
+
+---
+
+:::: {.columns}
+::: {.column width=50%}
+![](include/img/wilson-plos-2024-best-2-annotate-dry.png)
+:::
+::: {.column width=50%}
+![@Wilson2014-oa](include/img/wilson-plos-2014-best-1.png)
+:::
+::::
+
+---
+
+:::: {.columns}
+::: {.column width=50%}
+![](include/img/wilson-plos-2024-best-2.png)
+:::
+::: {.column width=50%}
+![@Wilson2014-oa](include/img/wilson-plos-2014-best-1.png)
+:::
+::::
 
 # Installing the tools
 
@@ -122,10 +150,10 @@ flowchart LR
 
 - Hosted on [GitHub](https://github.com)
 - Sample files for you to explore
+- Hello World
 - Slides
-- Report
 
-## RevealJS Slides
+---
 
 ![<https://github.com/penn-state-open-science/bootcamp-2025-quarto-I-template>](include/img/github-template.png){fig-align="center"}
 
@@ -160,10 +188,65 @@ flowchart LR
 
 ![](include/img/paste-github-url.png){fig-align="center"}
 
-## Research report
+---
+
+![](include/img/quarto-I-template-files.png){fig-align="center"}
+
+## Your turn
+
+Load the R packages used in the template:
+
+![](include/img/renv-restore.png){fig-align="center"}
+
+## Your turn
+
+Open `hello-world.qmd`
+
+![](include/img/open-hello-world.png){fig-align="center"}
+
+## Your turn
+
+Render the document
+
+![](include/img/open-hello-world-render.png){fig-align="center"}
+
+---
+
+![](include/img/render-html-docx-pdf.png){fig-align="center"}
+
+## Your turn
+
+Inspect the HTML output
+
+![](include/img/rendered-hello-world-html.png){fig-align="center"}
+
+---
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXo1ZXU3a2I2NXByaGd3NGp1bTgzMHBuZDVqcHFyNXN3ZTY2M3BtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/64zCCtka5rWL1gE5JH/giphy.gif){fig-align="center"}
+
+---
+Edit, save, render, inspect (repeat)
+
+![](include/img/open-hello-world.png){fig-align="center"}
+
+# Wrap-up
+
+---
+
+![*You* have the power.](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXU2cHB2cjk2bHN3ejJkdnNjNno0bzlka3d2Y3duOHR1aHM0enNhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BtEw37CXZti8yfq3Ke/giphy.gif){fig-align="center"}
+
+## FAQs
+
+- Do I have to learn R?
+- What's wrong with X (alternative tools)?
+- My adviser prefers X, what should I do?
+
+## Take homes
+
+- Quarto $\rightarrow$ DRY WIT
+- Reproducible to you $\rightarrow$ reproducible to others
+- Save time
 
 # Resources
 
 ## References
-
-
