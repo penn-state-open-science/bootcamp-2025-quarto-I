@@ -49,7 +49,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-7446d191c17a986339fc8518a32f4fb9.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-4e52f9d45c0ca3aff2b082ee114cf25f.css">
   <link rel="stylesheet" href="include/css/psu.sass">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -170,12 +170,18 @@ Rick Gilmore
 <h1>Preliminaries</h1>
 
 </section>
+<section id="follow-along" class="slide level2">
+<h2>Follow-along</h2>
+
+<img data-src="include/fig/fig-talk-qr-code-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-talk-qr-code"><p class="caption">
+Figure&nbsp;1: https://penn-state-open-science.github.io/bootcamp-2025-quarto-I/
+</p></section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
 <li>Motivation</li>
 <li>Installing the tools</li>
-<li>Case study: RevealJS slides</li>
+<li>Case study</li>
 <li>Under the hood</li>
 </ul>
 </section>
@@ -209,7 +215,7 @@ Rick Gilmore
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scholarly-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A sample scholarly workflow
+Figure&nbsp;2: A sample scholarly workflow
 </figcaption>
 </figure>
 </div>
@@ -238,7 +244,7 @@ Figure&nbsp;1: A sample scholarly workflow
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-document-parts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Components of a scholarly document
+Figure&nbsp;3: Components of a scholarly document
 </figcaption>
 </figure>
 </div>
@@ -268,11 +274,12 @@ Figure&nbsp;2: Components of a scholarly document
 <ul>
 <li>Reducing duplication of effort</li>
 <li>Re-using our own hard work</li>
-<li>Making our own work reproducible<sup>1</sup> &amp; transparent<sup>2</sup></li>
+<li>Making our own work <strong>reproducible</strong><sup>1</sup>…</li>
+<li>&amp; <strong>transparent</strong><sup>2</sup></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>“Same result today as we got yesterday.”</p></li><li id="fn2"><p>“Clear what was done to get from A to B”</p></li></ol></aside></section>
-<section id="solutions" class="slide level2">
-<h2>Solutions</h2>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
 <ul>
 <li>DRY WIT
 <ul>
@@ -416,41 +423,34 @@ Figure&nbsp;2: Components of a scholarly document
 
 
 <img data-src="include/img/quarto-I-template-files.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="your-turn" class="slide level2">
-<h2>Your turn</h2>
-<p>Load the R packages used in the template:</p>
+<section id="load-the-r-packages" class="slide level2">
+<h2>Load the R packages</h2>
 
 <img data-src="include/img/renv-restore.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="your-turn-1" class="slide level2">
-<h2>Your turn</h2>
-<p>Open <code>hello-world.qmd</code></p>
+<section id="open-hello-world.qmd" class="slide level2">
+<h2>Open <code>hello-world.qmd</code></h2>
 
 <img data-src="include/img/open-hello-world.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="your-turn-2" class="slide level2">
-<h2>Your turn</h2>
-<p>Render the document</p>
+<section id="render-the-document" class="slide level2">
+<h2>Render the document</h2>
 
 <img data-src="include/img/open-hello-world-render.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 
 
 <img data-src="include/img/render-html-docx-pdf.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="your-turn-3" class="slide level2">
-<h2>Your turn</h2>
-<p>Inspect the HTML output</p>
+<section id="inspect-the-html-output" class="slide level2">
+<h2>Inspect the HTML output</h2>
 
 <img data-src="include/img/rendered-hello-world-html.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="edit-save-render-inspect-repeat" class="slide level2">
+<h2>Edit, save, render, inspect (repeat)</h2>
+
+<img data-src="include/img/open-hello-world.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 
 
-<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXo1ZXU3a2I2NXByaGd3NGp1bTgzMHBuZDVqcHFyNXN3ZTY2M3BtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/64zCCtka5rWL1gE5JH/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section class="slide level2">
-
-
-<img data-src="include/img/open-hello-world.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
-<li>Edit, save, render, inspect</li>
-</ul>
-</section></section>
+<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXo1ZXU3a2I2NXByaGd3NGp1bTgzMHBuZDVqcHFyNXN3ZTY2M3BtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/64zCCtka5rWL1gE5JH/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap-up</h1>
@@ -472,9 +472,27 @@ Figure&nbsp;2: Components of a scholarly document
 <h2>Take homes</h2>
 <ul>
 <li>Quarto <span class="math inline">\(\rightarrow\)</span> DRY WIT</li>
+<li>Save time!</li>
 <li>Reproducible to you <span class="math inline">\(\rightarrow\)</span> reproducible to others</li>
-<li>Save time</li>
+<li>Quarto (Part II): Reproducible research reports (tomorrow 1:15p)</li>
 </ul>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>…<strong>If I have seen further it is by standing on the shoulders of Giants</strong>.</p>
+</blockquote>
+<p>Newton to Robert Hooke, 1675</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="include/img/isaac-newton.png"></p>
+<figcaption>Sir Isaac Newton from <a href="https://en.wikipedia.org/wiki/Isaac_Newton">Wikipedia</a></figcaption>
+</figure>
+</div>
+</div></div>
 </section></section>
 <section>
 <section id="resources" class="title-slide slide level1 center">
@@ -709,6 +727,44 @@ Wilson, G., Aruliah, D. A., Brown, C. T., Chue Hong, N. P., Davis, M., Guy, R. T
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

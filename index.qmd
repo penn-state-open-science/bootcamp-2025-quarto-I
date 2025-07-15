@@ -6,11 +6,21 @@ author: "Rick Gilmore"
 
 # Preliminaries
 
+## Follow-along
+
+```{r}
+#| label: fig-talk-qr-code
+#| echo: false
+#| fig-cap: "https://penn-state-open-science.github.io/bootcamp-2025-quarto-I/"
+
+plot(qrcode::qr_code("https://penn-state-open-science.github.io/bootcamp-2025-quarto-I/"))
+```
+
 ## Agenda
 
 - Motivation
 - Installing the tools
-- Case study: RevealJS slides
+- Case study
 - Under the hood
 
 ## Motivation
@@ -71,9 +81,10 @@ flowchart LR
 
 - Reducing duplication of effort
 - Re-using our own hard work
-- Making our own work reproducible^["Same result today as we got yesterday."] & transparent^["Clear what was done to get from A to B"]
+- Making our own work **reproducible**^["Same result today as we got yesterday."]...
+- & **transparent**^["Clear what was done to get from A to B"]
 
-## Solutions
+## Solution
 
 - DRY WIT
   - Don't Repeat Yourself
@@ -192,21 +203,15 @@ flowchart LR
 
 ![](include/img/quarto-I-template-files.png){fig-align="center"}
 
-## Your turn
-
-Load the R packages used in the template:
+## Load the R packages
 
 ![](include/img/renv-restore.png){fig-align="center"}
 
-## Your turn
-
-Open `hello-world.qmd`
+## Open `hello-world.qmd`
 
 ![](include/img/open-hello-world.png){fig-align="center"}
 
-## Your turn
-
-Render the document
+## Render the document
 
 ![](include/img/open-hello-world-render.png){fig-align="center"}
 
@@ -214,20 +219,17 @@ Render the document
 
 ![](include/img/render-html-docx-pdf.png){fig-align="center"}
 
-## Your turn
-
-Inspect the HTML output
+## Inspect the HTML output
 
 ![](include/img/rendered-hello-world-html.png){fig-align="center"}
+
+## Edit, save, render, inspect (repeat)
+
+![](include/img/open-hello-world.png){fig-align="center"}
 
 ---
 
 ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXo1ZXU3a2I2NXByaGd3NGp1bTgzMHBuZDVqcHFyNXN3ZTY2M3BtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/64zCCtka5rWL1gE5JH/giphy.gif){fig-align="center"}
-
----
-Edit, save, render, inspect (repeat)
-
-![](include/img/open-hello-world.png){fig-align="center"}
 
 # Wrap-up
 
@@ -244,8 +246,22 @@ Edit, save, render, inspect (repeat)
 ## Take homes
 
 - Quarto $\rightarrow$ DRY WIT
+- Save time!
 - Reproducible to you $\rightarrow$ reproducible to others
-- Save time
+- Quarto (Part II): Reproducible research reports (tomorrow 1:15p)
+
+---
+
+:::: {.columns}
+::: {.column width=50%}
+>...**If I have seen further it is by standing on the shoulders of Giants**.
+
+Newton to Robert Hooke, 1675
+:::
+::: {.column width=50%}
+![Sir Isaac Newton from [Wikipedia](https://en.wikipedia.org/wiki/Isaac_Newton)](include/img/isaac-newton.png)
+:::
+::::
 
 # Resources
 

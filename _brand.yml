@@ -1,0 +1,18 @@
+color:
+  palette:
+    white: $theme-psu-white-out
+    blue: $theme-psu-beaver-blue
+    navy: $theme-psu-nittany-navy
+    light-blue: $theme-psu-pugh-blue
+  background: white
+  primary: blue
+  
+logo:
+  medium: https://brand.psu.edu/images/backgrounds/penn-state-shield.jpg
+
+typography:
+  fonts:
+    - family: Roboto
+      source: google
+  base: Roboto
+  headings: Roboto
