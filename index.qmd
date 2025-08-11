@@ -103,6 +103,8 @@ flowchart LR
 - Automate as much as possible
 - Re-use text, code, figures
 
+![](https://www.justologist.com/content/images/2023/08/maxresdefault-3-1.jpg)
+
 ---
 
 ![<https://quarto.org>](include/img/quarto-logo.png)
@@ -232,6 +234,10 @@ flowchart LR
 ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXo1ZXU3a2I2NXByaGd3NGp1bTgzMHBuZDVqcHFyNXN3ZTY2M3BtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/64zCCtka5rWL1gE5JH/giphy.gif){fig-align="center"}
 
 # Wrap-up
+
+---
+
+![](include/img/quarto-guide.png){.lightbox fig-align="center"}
 
 ---
 

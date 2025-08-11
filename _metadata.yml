@@ -15,4 +15,6 @@ format:
   pptx: default
 knitr:
   opts_chunk:
-    fig.path: include/fig/ 
+    fig.path: include/fig/
+    
+  
