@@ -4,17 +4,15 @@ format:
     slide-number: true
     fig-align: center
     logo: https://brand.psu.edu/images/backgrounds/penn-state-shield.jpg
-    bibliography: [include/bib/packages.bib, include/bib/data-viz.bib, include/bib/quarto-I.bib]
+    bibliography: [include/bib/packages.bib, include/bib/data-viz.bib]
     csl: include/bib/apa.csl
-    css: include/css/psu.sass
+    theme: [serif, include/css/psu.scss]
+    mainfont: roboto
     code-fold: true
     code-tools: true
     chalkboard: true
-    mainfont: roboto
-    theme: [default, include/css/psu.sass]
-  pptx: default
+    link-external-icon: true
+    citations-hover: false
 knitr:
   opts_chunk:
-    fig.path: include/fig/
-    
-  
+    fig.path: include/fig

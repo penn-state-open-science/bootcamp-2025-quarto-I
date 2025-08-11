@@ -31,29 +31,8 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-f5f83f25d0cdf2de9be84dbbc7bb8382.css">
-  <link rel="stylesheet" href="include/css/psu.sass">
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-597cf21e7ee8df865b914ce397f495d9.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -176,7 +155,7 @@ Rick Gilmore
 <section id="follow-along" class="slide level2">
 <h2>Follow-along</h2>
 
-<img data-src="include/fig/fig-talk-qr-code-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-talk-qr-code"><p class="caption">
+<img data-src="include/figfig-talk-qr-code-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-talk-qr-code"><p class="caption">
 Figure&nbsp;1: https://penn-state-open-science.github.io/bootcamp-2025-quarto-I/
 </p></section>
 <section id="agenda" class="slide level2">
@@ -318,7 +297,7 @@ Figure&nbsp;3: Components of a scholarly document
 <section class="slide level2">
 
 
-<img data-src="include/img/wilson-etal-plos.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p></section>
+<img data-src="include/img/wilson-etal-plos.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="Wilson2014-oa">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Wilson2014-oa?</strong></a>)</span></p></section>
 <section class="slide level2">
 
 <div class="columns">
@@ -328,7 +307,7 @@ Figure&nbsp;3: Components of a scholarly document
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="include/img/wilson-plos-2014-best-1.png"></p>
-<figcaption><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></figcaption>
+<figcaption><span class="citation" data-cites="Wilson2014-oa">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Wilson2014-oa?</strong></a>)</span></figcaption>
 </figure>
 </div>
 </div></div>
@@ -342,7 +321,7 @@ Figure&nbsp;3: Components of a scholarly document
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="include/img/wilson-plos-2014-best-1.png"></p>
-<figcaption><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></figcaption>
+<figcaption><span class="citation" data-cites="Wilson2014-oa">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Wilson2014-oa?</strong></a>)</span></figcaption>
 </figure>
 </div>
 </div></div>
@@ -511,14 +490,9 @@ Figure&nbsp;3: Components of a scholarly document
 <h1>Resources</h1>
 
 </section>
-<section id="references" class="slide level2 smaller scrollable">
+<section id="references" class="slide level2">
 <h2>References</h2>
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Wilson2014-oa" class="csl-entry" role="listitem">
-Wilson, G., Aruliah, D. A., Brown, C. T., Chue Hong, N. P., Davis, M., Guy, R. T., … Wilson, P. (2014). Best practices for scientific computing. <em>PLoS Biology</em>, <em>12</em>, e1001745. <a href="https://doi.org/10.1371/journal.pbio.1001745">https://doi.org/10.1371/journal.pbio.1001745</a>
-</div>
-</div>
 </section></section>
 
     </div>
@@ -878,6 +852,8 @@ Wilson, G., Aruliah, D. A., Brown, C. T., Chue Hong, N. P., Davis, M., Guy, R. T
             if (link.dataset.originalHref !== undefined) {
               link.href = link.dataset.originalHref;
             }
+              // default icon
+              link.classList.add("external");
           }
         }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -922,43 +898,6 @@ Wilson, G., Aruliah, D. A., Brown, C. T., Chue Hong, N. P., Davis, M., Guy, R. T
             return "";
           }
         });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
       }
     });
     </script>
