@@ -1,5 +1,6 @@
 /*-- scss.defaults --*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+$font-family-sans-serif: 'Roboto Slab', sans-serif;
 
 // Base document colors
 $theme-psu-nittany-navy: #001E44;
@@ -29,7 +30,21 @@ h2, h3, h4, h5, h6 {
   color: $theme-psu-beaver-blue;
 }
 
+h2, h3, h4 {
+  font-size: 1em;
+}
+
+h4 {
+  font-style: italic;
+  font-weight: bold;
+}
+
 /*-- scss:mixins --*/
+
+.highlight-color {
+  color: $theme-psu-lions-roar;
+  font-weight: bold;
+}
 
 /*-- scss:functions --*/
 
