@@ -31,7 +31,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-578c2a11912ba4550bba8bae1db6f774.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -297,7 +317,7 @@ Figure&nbsp;3: Components of a scholarly document
 <section class="slide level2">
 
 
-<img data-src="include/img/wilson-etal-plos.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="Wilson2014-oa">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Wilson2014-oa?</strong></a>)</span></p></section>
+<img data-src="include/img/wilson-etal-plos.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p></section>
 <section class="slide level2">
 
 <div class="columns">
@@ -307,7 +327,7 @@ Figure&nbsp;3: Components of a scholarly document
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="include/img/wilson-plos-2014-best-1.png"></p>
-<figcaption><span class="citation" data-cites="Wilson2014-oa">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Wilson2014-oa?</strong></a>)</span></figcaption>
+<figcaption><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></figcaption>
 </figure>
 </div>
 </div></div>
@@ -321,7 +341,7 @@ Figure&nbsp;3: Components of a scholarly document
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="include/img/wilson-plos-2014-best-1.png"></p>
-<figcaption><span class="citation" data-cites="Wilson2014-oa">(<a href="" role="doc-biblioref" onclick="return false;"><strong>Wilson2014-oa?</strong></a>)</span></figcaption>
+<figcaption><span class="citation" data-cites="Wilson2014-oa">Wilson et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></figcaption>
 </figure>
 </div>
 </div></div>
@@ -441,6 +461,38 @@ Figure&nbsp;3: Components of a scholarly document
 </section>
 <section class="slide level2">
 
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(["Idea"]) --&gt; B["Proposal"]
+  B --&gt; C("Project_1")
+  B --&gt; D("Project_2")
+  C --&gt; E["IRB_protocol"]
+  D --&gt; E
+  C --&gt; F["Lab_protocol"]
+  D --&gt; F
+  C --&gt; G["Data_pipeline_1"]
+  D --&gt; H["Data_pipeline_2"]
+  B --&gt; I["Conference_presentation"]
+  F --&gt; I
+  G --&gt; I
+  C --&gt; I
+  I --&gt; J["Journal_manuscript"]
+  H --&gt; K["Lab_mtg_report"]
+  K --&gt; J
+  F --&gt; J
+</pre>
+</div>
+<p></p><figcaption> A sample scholarly workflow</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="include/img/quarto-guide.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="include/img/quarto-guide.png" class="quarto-figure quarto-figure-center"></a></p>
@@ -490,9 +542,19 @@ Figure&nbsp;3: Components of a scholarly document
 <h1>Resources</h1>
 
 </section>
-<section id="references" class="slide level2">
+<section id="about" class="slide level2">
+<h2>About</h2>
+<p>This talk was produced using <a href="https://quarto.org">Quarto</a>, using the <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> Integrated Development Environment (IDE), version 2025.5.1.513.</p>
+<p>The source files are in R and R Markdown, then rendered to HTML using the <a href="https://revealjs.com">revealJS</a> framework. The HTML slides are hosted in a <a href="https://github.com/penn-state-open-science/bootcamp-2025-quarto-I">GitHub repo</a> and served by GitHub pages: <a href="https://penn-state-open-science.github.io/bootcamp-2025-quarto-I/" class="uri">https://penn-state-open-science.github.io/bootcamp-2025-quarto-I/</a></p>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Wilson2014-oa" class="csl-entry" role="listitem">
+Wilson, G., Aruliah, D. A., Brown, C. T., Chue Hong, N. P., Davis, M., Guy, R. T., … Wilson, P. (2014). Best practices for scientific computing. <em>PLoS Biology</em>, <em>12</em>, e1001745. <a href="https://doi.org/10.1371/journal.pbio.1001745">https://doi.org/10.1371/journal.pbio.1001745</a>
+</div>
+</div>
 </section></section>
 
     </div>

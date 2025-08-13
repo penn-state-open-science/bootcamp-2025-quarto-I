@@ -237,6 +237,30 @@ flowchart LR
 
 ---
 
+```{mermaid}
+%%| fig-cap: "A sample scholarly workflow"
+flowchart LR
+  A(["Idea"]) --> B["Proposal"]
+  B --> C("Project_1")
+  B --> D("Project_2")
+  C --> E["IRB_protocol"]
+  D --> E
+  C --> F["Lab_protocol"]
+  D --> F
+  C --> G["Data_pipeline_1"]
+  D --> H["Data_pipeline_2"]
+  B --> I["Conference_presentation"]
+  F --> I
+  G --> I
+  C --> I
+  I --> J["Journal_manuscript"]
+  H --> K["Lab_mtg_report"]
+  K --> J
+  F --> J
+```
+
+---
+
 ![](include/img/quarto-guide.png){.lightbox fig-align="center"}
 
 ---
@@ -270,5 +294,15 @@ Newton to Robert Hooke, 1675
 ::::
 
 # Resources
+
+## About
+
+This talk was produced using [Quarto](https://quarto.org), using the [RStudio](https://posit.co/products/open-source/rstudio/)
+Integrated Development Environment (IDE), version 2025.5.1.513.
+
+The source files are in R and R Markdown, then rendered to HTML using the
+[revealJS](https://revealjs.com) framework. 
+The HTML slides are hosted in a [GitHub repo](https://github.com/penn-state-open-science/bootcamp-2025-quarto-I) and served by GitHub pages: 
+<https://penn-state-open-science.github.io/bootcamp-2025-quarto-I/>
 
 ## References
